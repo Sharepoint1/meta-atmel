@@ -44,6 +44,10 @@ IMAGE_INSTALL += "\
 	tslib-calibrate \
 	tslib-tests \
 	opkg \
+	openssh \
+	openssh-sftp \
+	openssh-sftp-server \
+	gdbserver \
 	gstreamer \
         gst-meta-base \
         gst-meta-video \
