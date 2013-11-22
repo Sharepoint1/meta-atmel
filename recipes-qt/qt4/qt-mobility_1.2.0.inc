@@ -78,8 +78,8 @@ geoclue-master_enabled = no
 gypsy_enabled = no
 ${qtm_extra_config}
 EOF
-
-	./configure -qmake-exec qmake2 -prefix /usr -staticconfig oe -examples -demos -modules "${QTM_MODULES_LIST}"
+	echo qtm_dir = ${qtm_dir}
+	./configure -qmake-exec qmake2 -prefix /usr -headerdir /usr/include/qtopia -staticconfig oe -examples -demos -modules "${QTM_MODULES_LIST}"
 	echo QT_MOBILITY_BIN = ${qtm_bin} >>./config.pri
 	echo QT_MOBILITY_LIB = ${qtm_lib} >>./config.pri
 	echo QT_MOBILITY_INCLUDE = ${qtm_include} >>./config.pri
