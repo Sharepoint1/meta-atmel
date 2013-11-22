@@ -63,3 +63,21 @@ SYSVINIT_ENABLED_GETTYS = ""
 
 8/ Build Atmel Qt-embedded demo
 bitbake atmel-qt4e-demo-image
+
+9/ Build Atmel QT-Embedded Yocto SDK
+bitbake meta-toolchain-qte
+The SDK will be located here:
+poky-eglibc-i686-meta-toolchain-qte-cortexa5hf-vfp-toolchain-qte-1.5.sh
+To build for 64bit machine, edit conf/local.conf and set SDKMACHINE variable:
+i686 for 32 bit and x86_64 for 64 bit machine.
+vim conf/local.conf
+[...]
+#
+# SDK/ADT target architecture
+#
+# This variable specified the architecture to build SDK/ADT items for and means
+# you can build the SDK packages for architectures other than the machine you are 
+# running the build on (i.e. building i686 packages on an x86_64 host._
+# Supported values are i686 and x86_64
+SDKMACHINE ?= "x86_64"
+[...]
